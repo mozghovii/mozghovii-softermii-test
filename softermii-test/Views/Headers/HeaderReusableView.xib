@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="HeaderReusableView" customModule="softermii_test" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="391-yk-cdB" userLabel="ContentView">
+                    <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0ul-Lc-i2p">
+                            <rect key="frame" x="9" y="9" width="82" height="82"/>
+                            <color key="backgroundColor" red="0.2022895217" green="0.47898232940000002" blue="0.71700930600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="82" id="raS-vS-BDY"/>
+                                <constraint firstAttribute="width" constant="82" id="uEC-Tj-CuV"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="41"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="O5w-wE-QxF">
+                            <rect key="frame" x="100" y="9" width="265" height="82"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZfT-IE-nH6" customClass="CustomButton" customModule="softermii_test" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="81.5" height="82"/>
+                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                    <state key="normal" title="A B C"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATN-Io-3WY" customClass="CustomButton" customModule="softermii_test" customModuleProvider="target">
+                                    <rect key="frame" x="91.5" y="0.0" width="82" height="82"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ik9-zv-xNN" customClass="CustomButton" customModule="softermii_test" customModuleProvider="target">
+                                    <rect key="frame" x="183.5" y="0.0" width="81.5" height="82"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="O5w-wE-QxF" firstAttribute="leading" secondItem="0ul-Lc-i2p" secondAttribute="trailing" constant="9" id="48A-Ye-CeQ"/>
+                        <constraint firstAttribute="trailing" secondItem="O5w-wE-QxF" secondAttribute="trailing" constant="9" id="6Nw-C9-2HL"/>
+                        <constraint firstItem="0ul-Lc-i2p" firstAttribute="leading" secondItem="391-yk-cdB" secondAttribute="leading" constant="9" id="6bV-ac-lQD"/>
+                        <constraint firstItem="0ul-Lc-i2p" firstAttribute="top" secondItem="391-yk-cdB" secondAttribute="top" constant="9" id="EnQ-ig-zV8"/>
+                        <constraint firstAttribute="bottom" secondItem="O5w-wE-QxF" secondAttribute="bottom" constant="9" id="Qmo-TT-QAP"/>
+                        <constraint firstAttribute="bottom" secondItem="0ul-Lc-i2p" secondAttribute="bottom" constant="9" id="jQz-bR-WIa"/>
+                        <constraint firstItem="O5w-wE-QxF" firstAttribute="top" secondItem="391-yk-cdB" secondAttribute="top" constant="9" id="zcl-p7-iKE"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="391-yk-cdB" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="ALF-tH-vv9"/>
+                <constraint firstAttribute="trailing" secondItem="391-yk-cdB" secondAttribute="trailing" id="H4o-yt-XZx"/>
+                <constraint firstItem="391-yk-cdB" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="Vmp-Jf-OD3"/>
+                <constraint firstAttribute="bottom" secondItem="391-yk-cdB" secondAttribute="bottom" id="wS4-As-AfX"/>
+            </constraints>
+            <connections>
+                <outlet property="avatarImageView" destination="0ul-Lc-i2p" id="oDi-ua-mVl"/>
+                <outlet property="followersButton" destination="ATN-Io-3WY" id="bTJ-26-Wkf"/>
+                <outlet property="followingButton" destination="ik9-zv-xNN" id="YWm-L1-lFq"/>
+                <outlet property="postsButton" destination="ZfT-IE-nH6" id="Twt-zz-Ygp"/>
+            </connections>
+            <point key="canvasLocation" x="55" y="104.5"/>
+        </collectionReusableView>
+    </objects>
+</document>
