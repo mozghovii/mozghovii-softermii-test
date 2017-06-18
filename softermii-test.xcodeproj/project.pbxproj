@@ -75,6 +75,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		37122CBE1EF734CD009A2D49 /* MediaViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6DBE32211EF15D3E00968733 /* MediaCollectionController.swift */,
+				378582A51EF6867400BFDFE5 /* DetailViewController.swift */,
+			);
+			name = MediaViewControllers;
+			sourceTree = "<group>";
+		};
 		6DBE317D1EEE9FFB00968733 = {
 			isa = PBXGroup;
 			children = (
@@ -141,8 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				6DBE321C1EF00FE400968733 /* LoginViewControllers */,
-				6DBE32211EF15D3E00968733 /* MediaCollectionController.swift */,
-				378582A51EF6867400BFDFE5 /* DetailViewController.swift */,
+				37122CBE1EF734CD009A2D49 /* MediaViewControllers */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -151,8 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				6DBE31C01EEEA47600968733 /* Headers */,
-				6DBE31C71EEEA47600968733 /* TextFields */,
-				6DBE31C91EEEA47600968733 /* ToolBar */,
 				6DBE31CB1EEEA47600968733 /* UIControls */,
 				6DBE31DC1EEEA47600968733 /* Cells */,
 			);
@@ -166,20 +172,6 @@
 				6DBE32241EF15DE800968733 /* HeaderReusableView.xib */,
 			);
 			path = Headers;
-			sourceTree = "<group>";
-		};
-		6DBE31C71EEEA47600968733 /* TextFields */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TextFields;
-			sourceTree = "<group>";
-		};
-		6DBE31C91EEEA47600968733 /* ToolBar */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ToolBar;
 			sourceTree = "<group>";
 		};
 		6DBE31CB1EEEA47600968733 /* UIControls */ = {

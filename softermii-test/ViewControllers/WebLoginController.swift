@@ -17,12 +17,14 @@ class WebLoginController: UIViewController,UIWebViewDelegate {
     
     @IBOutlet weak var webView: UIWebView!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var delegate : WebLoginControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         clearCacheData()
         startAuthorization()
+        activityIndicator.startAnimating()
     }
     
     //MARK: - Actions
@@ -70,6 +72,7 @@ class WebLoginController: UIViewController,UIWebViewDelegate {
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
+        activityIndicator.stopAnimating()
         print("webViewDidFinishLoad")
 
     }

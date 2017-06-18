@@ -14,6 +14,7 @@ class MediaCollectionController: UIViewController {
     let numberOfCellsPerRow: CGFloat = 3
     var currentUser:User?
     var mediaArray = Array<Any>()
+    var refreshControl:UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,18 +30,21 @@ class MediaCollectionController: UIViewController {
     
     // MARK: - Private Methods
 
-    private func getDataFromAPI() {
+    @objc private func getDataFromAPI() {
         APIManager.sharedInstance .getUserInfo(success: { (user) in
             self.currentUser = user
             self.collectionView.reloadData()
+            self.navigationItem.title = self.currentUser?.userName
         }, failure: {
-            
+            self.refreshControl.endRefreshing()
+
         })
         APIManager.sharedInstance.getSelfMediaRecent(parameters: nil, success: { (array) in
             self.mediaArray = array
+            self.refreshControl.endRefreshing()
             self.collectionView.reloadData()
         }) {
-            
+            self.refreshControl.endRefreshing()
         }
     }
     
@@ -51,8 +55,10 @@ class MediaCollectionController: UIViewController {
             let cellWidth = (view.frame.width - max(0, numberOfCellsPerRow - 1)*horizontalSpacing)/numberOfCellsPerRow
             flowLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
         }
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.addTarget(self, action: #selector(getDataFromAPI), for: UIControlEvents.valueChanged)
+        collectionView!.addSubview(refreshControl)
     }
-    
 }
 
 // MARK: - UICollectionViewDataSource
@@ -77,7 +83,6 @@ extension MediaCollectionController:UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         var reusableView : UICollectionReusableView? = nil
         
-        // Create header
         if (kind == UICollectionElementKindSectionHeader) {
             // Create Header
             let headerView: HeaderReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Globals.CellIdentifiers.HeaderReusableView, for: indexPath as IndexPath) as! HeaderReusableView

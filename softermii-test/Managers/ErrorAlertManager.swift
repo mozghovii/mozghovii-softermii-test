@@ -14,7 +14,11 @@ class ErrorAlertManager: UIAlertController {
 
     class func manageError(error: Error?, action: ((UIAlertAction)->())?, vc: UIViewController?)  {
         let title = "Error"
-        let message = error?.localizedDescription
+        var message = error?.localizedDescription
+        if ((error as NSError?) != nil) {
+            message = (error! as NSError).domain
+        }
+        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: action)
         alert.addAction(action)

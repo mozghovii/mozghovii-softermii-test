@@ -68,4 +68,9 @@ struct Globals {
         static let thumbnail                        = "thumbnail"
     }
     
+    struct ErrorMessages {
+        static let invalidEmail                     = "Invalid Email"
+        static let invalidPassword                  = "Password must contain at least one number and one letter and be at least 8 characters long"
+    }
+    
 }
